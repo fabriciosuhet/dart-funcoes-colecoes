@@ -7,12 +7,15 @@ void main() {
   try {
     int.parse(idade);
     nome!.toLowerCase();
-  } on FormatException catch(e) {
-    print('Erro ao converter idade');
-  } on TypeError catch(e) {
+  } on FormatException catch(e, s) {
+    // print(e);
+    print(s);
+  } on TypeError {
     print('Erro ao converter idade');
   } catch (e) {
     print('Erro ao executar programa');
+  } finally {
+    print('finally');
   }
 
 }
